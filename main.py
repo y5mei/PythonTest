@@ -17,13 +17,13 @@ def swap_positions(input_list, pos1, pos2):
 
 
 if __name__ == '__main__':
-    JSON_KEY = "123456789"
+    JSON_KEY = "0123456789abcdefghijklmnopqrstuvwxyz"
     with open('test.json', 'w+') as fh:
         fh.write("{")
-        for _ in range(1500000):
+        for _ in range(1000000):
             key = random_shuffle(JSON_KEY)
             value = random_shuffle(JSON_KEY)
-            line_content = '"{}":{},'.format(key, value)
+            line_content = '"{}":"{}",'.format(key, value)
             fh.write(line_content)
         fh.write('"end": 1')
         fh.write("}")
